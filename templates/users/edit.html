@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Edit</title>
+</head>
+<body>
+<form action="{{ url_for('update_user', id=user.id) }}" method="post">
+  <label>
+    Email *
+    <input type="text" name="email" value="{{ user.email }}">
+  </label>
+  {% if errors %}
+  <div>{{ errors.email}}</div>
+  {% endif %}
+  <input type="submit" value="Update">
+</form>
+</body>
+</html>
